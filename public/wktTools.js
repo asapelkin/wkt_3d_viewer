@@ -46,6 +46,8 @@ function geometryToPolygonsArray(geometry)
         geometry.geometries.forEach(function(item, i, arr) {
              res = res.concat(geometryToPolygonsArray(item));
         });
+    } else {
+        alert("geometry type " + geometry.type + " not supported");
     }
    // console.log(res);
     return res;
