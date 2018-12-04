@@ -3,7 +3,8 @@ image: alpine:latest
 pages:
   stage: deploy
   script:
-  - echo 'Hello there'
+  - cd public
+  - wget https://raw.github.com/mapbox/wellknown/master/wellknown.js
   artifacts:
     paths:
     - public
