@@ -52,3 +52,4 @@ function geometryToPolygonsArray(geometry)
    // console.log(res);
     return res;
 }
+

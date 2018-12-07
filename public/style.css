@@ -20,9 +20,8 @@ html, body {
 }
 
 #InputWidgetHeader {
-    padding: 3px;
     cursor: move;
-    height: 20;
+    height: 30px;
     background-color: #2196F3;
     color: #fff;
     /*background: url(move_icon.png) no-repeat;*/
@@ -36,53 +35,47 @@ img {
 .FloatWidget {
     width:20%;
     height:50%;
-    padding:0px;
-    background-color:#ff8811;
-    position:absolute;
+    /*padding:0px;*/
+    /*position:absolute;*/
 }
 
 .drawButton {
     width:100%;
+    height: 30px;
 }
 
 textarea {
     width: 100%;
-    height: 100% ;
-    padding: 3px;
-    border: 0px;
-    font: normal 1em Verdana, sans-serif;
-    display: block;
+    /*height: calc(100% - 52px); !* @todo this fucking shit*!*/
+    /*padding: 3px;*/
+    /*border: 0px;*/
+    height: 100%;
     resize: none; /* Запрещаем изменять размер */
 }
 
+/*.brd1 {*/
+    /*position: relative;*/
+    /*border: 2px blue; !* Параметры границы *!*/
+    /*background: black; !* Цвет фона *!*/
+/*}*/
 
-html,
-body {
+/*.brd2 {*/
+    /*height: calc(100% - 60px);*/
+    /*position: relative;*/
+    /*border: 2px black; !* Параметры границы *!*/
+    /*background: green; !* Цвет фона *!*/
+
+/*}*/
+
+.brd1 {
+    position: relative;
     height: 100%;
-    margin: 0
+    width: 100%;
 }
 
-.box {
-    display: flex;
-    flex-flow: column;
-    height: 100%;
+.brd2 {
+    height: calc(100% - 60px);
+    position: relative;
+
 }
-
-.box .row {
-    border: 1px dotted grey;
-}
-
-.box .row.header {
-    flex: 0 1 auto;
-}
-
-.box .row.content {
-    flex: 1 1 auto;
-}
-
-.box .row.footer {
-    flex: 0 1 40px;
-}
-
-
 
