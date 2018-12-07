@@ -2,10 +2,9 @@
 
 function drawGeometry() {
     var wkt_string = document.getElementById('wktInput').value;
+	wkt_string = wkt_string.replace(/ +(?= )/g,'');
     var geometry = wellknown.parse(wkt_string.trim());
 
-   // console.log(geometry);
-   // return;
     geoms.forEach(function(item, i, arr) {
         item.destroy();
     });
