@@ -1,3 +1,5 @@
+const PresType = {"polygon":1, "marker":2};
+Object.freeze(PresType);
 
 function drawGeometry() {
     let wkt_string = document.getElementById('wktInput').value;
@@ -5,14 +7,17 @@ function drawGeometry() {
     let geometry = wellknown.parse(wkt_string.trim());
 
     geoms.forEach(function(item, i, arr) {
-        item.destroy();
+        if (item[1] == PresType.polygon)
+            item[0].destroy();
+        else
+            item[0].removeFrom(earth);
     });
+    geoms = [];
 
     let geomArray = wkt2geoArray(geometry);
     geomArray.forEach(function(item, i, arr) {
-        console.log("sdfsdfsdfsdfsdfsdfsdfsdfsdfs");
-        let gObj = item.addTo(earth);
-        geoms.push(gObj);
+        let gObj = item[0].addTo(earth);
+        geoms.push([gObj, item[1]]);
     });
     if (geomArray.length > 0) {
         // let viewPoint = geomArray[0][0];
@@ -24,11 +29,11 @@ function wkt2geoArray(geometry)
 {
     let res = [];
     if (geometry.type === "Polygon") {
-        res.push(wkt2Polygon(geometry));
+        res.push([wkt2Polygon(geometry), PresType.polygon]);
     } else if (geometry.type === "Point") {
-        res.push(wkt2Point(geometry));
+        res.push([wkt2Point(geometry), PresType.marker]);
     } else if (geometry.type === "LineString") {
-        res.push(wkt2Line(geometry));
+        res.push([wkt2Line(geometry), PresType.polygon]);
     } else if (geometry.type === "GeometryCollection") {
         geometry.geometries.forEach(function(item, i, arr) {
              res = res.concat(wkt2geoArray(item));
@@ -36,7 +41,7 @@ function wkt2geoArray(geometry)
     } else {
         alert("geometry type " + geometry.type + " not supported");
     }
-   // console.log(res);
+
     return res;
 }
 
@@ -81,12 +86,12 @@ function wkt2Polygon(geometry) {
         item[0] = item[1];
         item[1] = buf;
     });
-    let pol = WE.polygon(points_array, {
+
+    return pol = WE.polygon(points_array, {
         color: '#0412d6',
         opacity: 1,
         fillColor: '#0412d6',
         fillOpacity: 0.1,
         weight: 2
     });
-    return pol;
 }
