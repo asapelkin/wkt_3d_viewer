@@ -4,6 +4,7 @@ Object.freeze(PresType);
 function drawGeometry() {
     let wkt_string = document.getElementById('wktInput').value;
 	wkt_string = wkt_string.replace(/ +(?= )/g,'');
+	wkt_string = wkt_string.replace(/(\r\n|\n|\r)/gm, "");
     let geometry = wellknown.parse(wkt_string.trim());
 
     geoms.forEach(function(item, i, arr) {
