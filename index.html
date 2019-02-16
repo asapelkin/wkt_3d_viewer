@@ -29,11 +29,17 @@
             <img src="move_icon.png" align="left">
             <img src="move_icon.png" align="right">
         </div>
-        <input type="button" value="Draw" class="drawButton" onclick="drawGeometry()">
+        <input   id="sraw_button"   type="button" value="Draw" class="WideButton" onclick="drawGeometry()">
         <div class="brd2">
         <textarea id="wktInput" placeholder="Insert WKT string here...">
             GEOMETRYCOLLECTION(POLYGON((-4.526367187499997 49.582226044621734,-6.987304687499997 47.78363463526375,-5.405273437499999 43.897892391257955,-3.3398437499999964 43.992814500489914,-0.1757812499999994 46.07323062540834,0.7470703125000004 48.632908585895365,-1.0546874999999962 50.0641917366591,-2.8124999999999982 48.83579746243092,-4.526367187499997 49.582226044621734)),LINESTRING(23.466796875000004 51.835777520452496,17.314453125000004 48.806863461085214,14.633789062500002 46.61926103617151,16.259765625 44.1506811597809),POINT(4.833984375000002 51.699799849741936),POINT(13.5791015625 51.672555148396754),POINT(25.224609375000004 46.19504210866015))
         </textarea>
+        
+        <form  id="star_me"  class="hidden"  action="https://github.com/asapelkin/wkt_3d_viewer">
+        <input class="WideButton"  type="submit" value="Star the project!" />
+        </form>
+       
+     
         </div>
     </div>
 </div>

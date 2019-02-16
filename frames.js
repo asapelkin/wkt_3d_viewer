@@ -46,3 +46,7 @@ $(function(){
     $('.FloatWidget')
         .resizable();
 });
+
+document.getElementById("sraw_button").addEventListener("click", function(){
+    document.getElementById("star_me").style.display = "none";
+});
