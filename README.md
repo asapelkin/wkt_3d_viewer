@@ -12,7 +12,7 @@
   - LINESTRING (via Polygon)
   - GEOMETRYCOLLECTION
 
-! no MULTI.. constructions yet
+! no MULTI.. constructions yet !
 
 #### Used projects:
  - https://www.webglearth.com
