@@ -1,5 +1,10 @@
 ### Well-known text viewer on the 3D Earth
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/asapelkin/wkt_3d_viewer/master/examples/example1.png" width="40%"/>
+  <img src="https://raw.githubusercontent.com/asapelkin/wkt_3d_viewer/master/examples/example2.png" width="40%"/>
+</p>
+
 
 #### Supported types:
   - POINT (via Marker)
